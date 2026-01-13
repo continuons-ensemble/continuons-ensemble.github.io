@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vos Idées - Campagne Municipale 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-users"></i> Campagne 2026</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Programme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="equipe.html" class="nav-link">Notre Équipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Vos Idées</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Partagez vos idées</h1>
+                <p class="hero-subtitle">Votre voix compte ! Proposez vos idées et suggestions pour améliorer notre
+                    commune</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Votre participation nous intéresse</h2>
+                        <p>Nous croyons fermement que les meilleures idées viennent des habitants. C'est pourquoi nous
+                            souhaitons recueillir vos suggestions, vos préoccupations et vos propositions.</p>
+
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Vos idées</h3>
+                                    <p>Proposez des projets concrets pour améliorer la vie dans notre commune</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Vos préoccupations</h3>
+                                    <p>Partagez vos inquiétudes et les problèmes que vous rencontrez au quotidien</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Votre engagement</h3>
+                                    <p>Indiquez-nous comment vous souhaitez vous impliquer dans la vie communale</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-details">
+                            <h3>Autres moyens de nous contacter</h3>
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>contact@campagne2026.fr</span>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-phone"></i>
+                                    <span>06 12 34 56 78</span>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Permanence tous les samedis matin, Place de la Mairie</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <h2>Formulaire de contact</h2>
+
+                            <div class="form-group">
+                                <label for="name">Nom et Prénom *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Catégorie</label>
+                                <select id="category" name="category">
+                                    <option value="">Choisissez une catégorie</option>
+                                    <option value="vivre-ensemble">Vivre ensemble et solidarité</option>
+                                    <option value="environnement">Environnement et cadre de vie</option>
+                                    <option value="securite">Sécurité et prévention</option>
+                                    <option value="communication">Communication et participation citoyenne</option>
+                                    <option value="attractivite">Attractivité de la commune</option>
+                                    <option value="services">Services à la population</option>
+                                    <option value="jeunesse">Jeunesse</option>
+                                    <option value="intergenerationnel">Lien intergénérationnel</option>
+                                    <option value="travaux">Travaux et grands projets</option>
+                                    <option value="autre">Autre sujet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Sujet *</label>
+                                <input type="text" id="subject" name="subject"
+                                    placeholder="Résumez votre idée en quelques mots" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Votre message *</label>
+                                <textarea id="message" name="message" rows="6"
+                                    placeholder="Décrivez votre idée, votre préoccupation ou votre suggestion..."
+                                    required></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Je souhaite recevoir les actualités de la campagne
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <span class="checkmark"></span>
+                                    J'accepte que mes données soient utilisées pour répondre à ma demande *
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Envoyer mon message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ideas-showcase">
+            <div class="container">
+                <h2>Idées déjà proposées</h2>
+                <p>Voici quelques idées que les habitants ont déjà partagées avec nous :</p>
+
+                <div class="ideas-grid">
+                    <div class="idea-card">
+                        <div class="idea-category">Environnement</div>
+                        <h3>Composteurs partagés</h3>
+                        <p>Installation de composteurs collectifs dans différents quartiers pour réduire les déchets
+                            organiques.</p>
+                        <div class="idea-author">Proposé par Marie L.</div>
+                    </div>
+
+                    <div class="idea-card">
+                        <div class="idea-category">Jeunesse</div>
+                        <h3>Skate park</h3>
+                        <p>Création d'un espace dédié aux sports urbains pour les jeunes près de l'école.</p>
+                        <div class="idea-author">Proposé par Lucas M.</div>
+                    </div>
+
+                    <div class="idea-card">
+                        <div class="idea-category">Services</div>
+                        <h3>Marché bio mensuel</h3>
+                        <p>Organisation d'un marché de producteurs locaux une fois par mois sur la place du village.</p>
+                        <div class="idea-author">Proposé par Pierre D.</div>
+                    </div>
+
+                    <div class="idea-card">
+                        <div class="idea-category">Intergénérationnel</div>
+                        <h3>Café des seniors</h3>
+                        <p>Ouverture d'un lieu de rencontre pour les personnes âgées avec animations régulières.</p>
+                        <div class="idea-author">Proposé par Simone R.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Campagne Municipale. Ensemble pour notre commune.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
