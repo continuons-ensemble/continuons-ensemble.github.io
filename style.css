@@ -1469,9 +1469,9 @@ footer p {
     /* Ajustements spécifiques pour mobile */
     .social-post.portrait .facebook-embed iframe {
         width: auto !important;
-        height: auto !important;
+        height: 600px !important; /* Hauteur augmentée pour mobile portrait */
         max-width: calc(100vw - 5rem);
-        max-height: none;
+        max-height: 600px;
     }
     
     .social-post.landscape .facebook-embed iframe {
