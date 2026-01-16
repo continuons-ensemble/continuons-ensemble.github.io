@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   # Se déclenche lors des push sur la branche main
   push:
-    branches: [ "main" ]
-  
+    branches: ["main"]
+
   # Permet de déclencher manuellement le workflow depuis l'interface GitHub
   workflow_dispatch:
 
@@ -26,18 +26,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
           # Active automatiquement Pages si ce n'est pas déjà fait
           enablement: true
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload de tout le répertoire du projet
-          path: '.'
+          path: "."
 
   # Job de déploiement
   deploy:

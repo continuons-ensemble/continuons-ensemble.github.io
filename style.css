@@ -211,17 +211,30 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    position: relative; /* Nécessaire pour le positionnement absolu du bouton */
 }
 
 .program-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
+    border: 2px solid var(--primary-color);
 }
 
 .program-card {
     padding: 2rem;
     cursor: pointer;
-    position: relative;
+    overflow: hidden;
+    min-height: 280px; /* Hauteur minimale augmentée pour uniformiser */
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête de la carte avec icône et titre alignés */
+.program-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .program-icon {
@@ -232,7 +245,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .program-icon i {
@@ -241,32 +254,63 @@ body {
 }
 
 .program-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin: 0;
     color: var(--text-primary);
+    flex: 1;
 }
 
 .program-card p {
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 4rem; /* Espace fixe pour le bouton en position absolue */
+    flex-grow: 1;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start; /* Aligne le texte en haut de l'espace disponible */
 }
 
-.program-arrow {
+/* Bouton "En savoir plus" amélioré */
+.program-more-btn {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
-    transition: var(--transition);
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
     cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.8rem;
+    opacity: 1; /* Toujours visible */
+    transform: translateY(0);
+    border: 2px solid var(--primary-color);
 }
 
-.program-arrow i {
-    color: var(--text-muted);
-    font-size: 1.25rem;
+.program-more-btn .more-text {
+    /* Supprimé flex: 1 et text-align */
 }
 
-.program-item:hover .program-arrow i {
-    color: var(--primary-color);
+.program-more-btn i {
+    font-size: 0.75rem;
+    transition: var(--transition);
+}
+
+.program-more-btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.program-more-btn:hover i {
+    transform: translateX(3px);
 }
 
 /* Modale des détails du programme */
@@ -939,6 +983,43 @@ footer p {
     .program-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .program-card {
+        padding: 1.5rem;
+        min-height: 260px; /* Hauteur minimale adaptée pour mobile */
+    }
+    
+    .program-header {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .program-icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+    
+    .program-icon i {
+        font-size: 1.25rem;
+    }
+    
+    .program-card h3 {
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+    
+    .program-card p {
+        margin-bottom: 3.5rem; /* Espace pour le bouton sur mobile */
+    }
+    
+    .program-more-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 0.65rem;
+        font-size: 0.75rem;
+        font-weight: 600;
     }
     
     .team-grid {
