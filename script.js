@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ul.appendChild(li);
                     });
                     
-                    modalList.innerHTML = '';
+                    modalList.innerHTML = '<h3>Nos actions :</h3>';
                     modalList.appendChild(ul);
                     
                     // Afficher la modale
