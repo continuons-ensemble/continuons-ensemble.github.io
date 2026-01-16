@@ -75,6 +75,15 @@ body {
 .nav-logo h2 {
     color: var(--primary-color);
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-logo i {
@@ -1099,5 +1108,376 @@ footer p {
     
     .join-card {
         padding: 2rem 1rem;
+    }
+}
+
+/* Styles pour la page Médias */
+.media-section {
+    padding: 4rem 0;
+    background-color: var(--bg-secondary);
+}
+
+.media-category {
+    margin-bottom: 4rem;
+}
+
+.media-category:last-child {
+    margin-bottom: 0;
+}
+
+.media-category h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.media-category h2 i {
+    font-size: 1.8rem;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.media-item {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.media-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* Styles pour les placeholders */
+.video-placeholder,
+.press-placeholder,
+.social-placeholder {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+}
+
+.video-placeholder i,
+.press-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.social-placeholder i {
+    font-size: 2.5rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    color: var(--primary-color);
+}
+
+.video-placeholder p,
+.press-placeholder p,
+.social-placeholder p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.video-placeholder small,
+.press-placeholder small,
+.social-placeholder small {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Styles pour les futures intégrations */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius-sm);
+}
+
+.press-article {
+    padding: 1rem;
+}
+
+.press-article img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.press-article h3 {
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.press-article .meta {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.social-embed {
+    padding: 1rem;
+}
+
+.social-embed iframe {
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius-sm);
+}
+
+/* Styles améliorés pour les réseaux sociaux */
+.social-platform {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.social-platform:last-child {
+    margin-bottom: 0;
+}
+
+.social-platform h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.social-platform h3 i {
+    font-size: 1.4rem;
+}
+
+.social-platform h3 i.fa-facebook {
+    color: #1877f2;
+}
+
+.social-platform h3 i.fa-instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+    justify-items: center;
+}
+
+/* Grilles spécifiques pour chaque format */
+.facebook-portrait {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.facebook-landscape {
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+}
+
+.social-post {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.social-post:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Styles spécifiques pour les formats */
+.social-post.portrait {
+    max-width: 320px;
+    min-height: 520px; /* Assurer assez d'espace pour l'iframe + padding */
+}
+
+.social-post.landscape {
+    max-width: 650px;
+    min-height: 520px; /* Assurer assez d'espace pour l'iframe + padding */
+}
+
+.facebook-embed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.facebook-embed iframe {
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow);
+    /* Garder les dimensions originales pour préserver les ratios */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles spécifiques pour les iframes portrait */
+.social-post.portrait .facebook-embed iframe {
+    /* Forcer la hauteur naturelle pour les portraits */
+    height: 476px !important;
+    width: 267px !important;
+    max-width: none;
+}
+
+/* Styles spécifiques pour les iframes paysage */
+.social-post.landscape .facebook-embed iframe {
+    height: 476px !important;
+    width: 600px !important;
+    max-width: 100%;
+}
+
+.instagram-placeholder {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #fdf2f8, #fcf5ff);
+    border: 2px dashed #c084fc;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+}
+
+.instagram-placeholder i {
+    font-size: 3rem;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.instagram-placeholder p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.instagram-placeholder small {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Responsive pour la page médias */
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .media-category h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .video-placeholder,
+    .press-placeholder,
+    .social-placeholder {
+        padding: 2rem 1.5rem;
+    }
+    
+    .social-placeholder i {
+        font-size: 2rem;
+        margin: 0 0.25rem 0.75rem 0.25rem;
+    }
+    
+    .social-platform {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .social-platform h3 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        justify-items: center;
+    }
+    
+    .facebook-portrait,
+    .facebook-landscape {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .social-post {
+        padding: 1rem;
+        width: fit-content;
+        max-width: calc(100vw - 3rem);
+        overflow-x: visible;
+    }
+    
+    .social-post.portrait,
+    .social-post.landscape {
+        max-width: calc(100vw - 3rem);
+        min-height: auto;
+    }
+    
+    .facebook-embed iframe {
+        max-width: calc(100vw - 5rem);
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    /* Ajustements spécifiques pour mobile */
+    .social-post.portrait .facebook-embed iframe {
+        width: auto !important;
+        height: auto !important;
+        max-width: calc(100vw - 5rem);
+        max-height: none;
+    }
+    
+    .social-post.landscape .facebook-embed iframe {
+        width: auto !important;
+        height: auto !important;
+        max-width: calc(100vw - 5rem);
+        max-height: none;
     }
 }
