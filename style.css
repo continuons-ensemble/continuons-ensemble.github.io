@@ -64,6 +64,13 @@ body {
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .container {
@@ -1019,6 +1026,7 @@ footer {
     color: var(--text-light);
     text-align: center;
     padding: 2rem 0;
+    margin-top: auto;
 }
 
 footer p {
