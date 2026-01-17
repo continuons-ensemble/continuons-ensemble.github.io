@@ -696,7 +696,7 @@ body {
 }
 
 .contact-content-centered {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
@@ -1214,11 +1214,11 @@ footer p {
     }
     
     .modal-header-content {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        text-align: center;
+        text-align: left;
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     
     .modal-content h2 {
@@ -1239,6 +1239,10 @@ footer p {
     
     .close-modal {
         right: 1rem;
+        font-size: 1.8rem;
+        width: 50px;
+        height: 50px;
+        padding: 0.75rem;
     }
     
     .modal-icon {
@@ -1251,7 +1255,32 @@ footer p {
     }
     
     .modal-header {
-        padding: 1rem 1.5rem;
+        padding: 2rem 1.5rem;
+        min-height: 60px;
+    }
+    
+    .modal-title-section {
+        margin-bottom: 0.5rem;
+    }
+    
+    .modal-content {
+        padding: 1rem 0.5rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.3;
+    }
+    
+    .modal-content p {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+
+    .modal-header-content {
+        margin-bottom: 0.5em;;
     }
 }
 
