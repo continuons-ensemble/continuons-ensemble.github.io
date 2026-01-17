@@ -171,7 +171,7 @@ main {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: var(--text-light);
     text-align: center;
-    padding: 4rem 0 4rem;
+    padding: 3rem 0 3rem;
     margin-top: 70px;
 }
 
@@ -1454,7 +1454,7 @@ footer p {
 }
 
 .social-embed {
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .social-embed iframe {
@@ -1463,14 +1463,14 @@ footer p {
     border-radius: var(--border-radius-sm);
 }
 
-/* Styles améliorés pour les réseaux sociaux */
+/* Styles améliorés pour les réseaux sociaux
 .social-platform {
     margin-bottom: 3rem;
     padding: 2rem;
     background: var(--bg-primary);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-}
+} */
 
 .social-platform:last-child {
     margin-bottom: 0;
@@ -1522,7 +1522,7 @@ footer p {
 .social-post {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
-    padding: 1.5rem;
+    padding: 0.5rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     display: flex;
@@ -1690,7 +1690,140 @@ footer p {
     }
 }
 
-/* Notice RGPD */
+/* Habillages spécifiques par type de média */
+
+/* Cadre pour les articles Facebook */
+.media-type-facebook {
+    border: 3px solid #1877f2;
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.15);
+    position: relative;
+}
+
+.media-type-facebook::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #1877f2, #42a5f5, #1877f2);
+    z-index: -1;
+    border-radius: var(--border-radius);
+    opacity: 0.8;
+}
+
+.media-type-facebook:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.25);
+}
+
+/* Cadre pour les articles de presse */
+.media-type-press {
+    border: 3px solid #059669;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+    position: relative;
+}
+
+.media-type-press::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #059669, #10b981, #059669);
+    z-index: -1;
+    border-radius: var(--border-radius);
+    opacity: 0.8;
+}
+
+.media-type-press:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25);
+}
+
+/* Cadre pour le contenu multimédia */
+.media-type-multimedia {
+    border: 3px solid #7c3aed;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    position: relative;
+}
+
+.media-type-multimedia::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #7c3aed, #a78bfa, #7c3aed);
+    z-index: -1;
+    border-radius: var(--border-radius);
+    opacity: 0.8;
+}
+
+.media-type-multimedia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+/* Ajout d'icônes distinctives dans le coin des cadres */
+.media-type-facebook::after {
+    content: "\f09a"; /* Icône Facebook */
+    font-family: "Font Awesome 6 Brands";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #1877f2;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.media-type-press::after {
+    content: "\f1ea"; /* Icône journal */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #059669;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.media-type-multimedia::after {
+    content: "\f03d"; /* Icône vidéo */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #7c3aed;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 .privacy-notice {
     background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
     border: 1px solid #0ea5e9;
