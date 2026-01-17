@@ -154,6 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalTitle.textContent = data.title;
                     modalSubtitle.textContent = data.subtitle;
                     
+                    // Mettre à jour la couleur de l'icône selon le thème
+                    const modalIconContainer = modalIcon.parentElement;
+                    modalIconContainer.setAttribute('data-theme', themeId);
+                    
                     // Créer la liste des items
                     const ul = document.createElement('ul');
                     data.items.forEach(itemText => {

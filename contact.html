@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Chargement conditionnel d'Umami Analytics uniquement sur github.io
+        if (window.location.hostname.includes('github.io')) {
+            const script = document.createElement('script');
+            script.defer = true;
+            script.src = 'https://cloud.umami.is/script.js';
+            script.setAttribute('data-website-id', '4d565b37-6771-4fd0-ac0c-8a3b67dd7cc2');
+            document.head.appendChild(script);
+        }
+    </script>
 </head>
 
 <body>
@@ -95,6 +105,20 @@
                             <p>Utilisez le formulaire ci-dessous pour nous faire part de vos idées, suggestions ou
                                 questions :</p>
 
+                            <div class="privacy-notice">
+                                <div class="privacy-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div class="privacy-text">
+                                        <strong>Protection de vos données :</strong>
+                                        Votre adresse email sera uniquement utilisée pour vous recontacter dans le cadre
+                                        de notre campagne municipale.
+                                        Données stockées via Google Forms/Sheets (États-Unis).
+                                        Vous pouvez demander la suppression à tout moment :
+                                        <strong>ce.vaudricourt@gmail.com</strong>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-container">
                                 <iframe
                                     src="https://docs.google.com/forms/d/e/1FAIpQLSeTLDjSYoMV4AU_37RvbHCGNuDSUjhF9zcfLNxPNpyVqdEiig/viewform?embedded=true"
@@ -141,6 +165,9 @@
     <footer>
         <div class="container">
             <p>&copy; Continuons Ensemble - 2026 Campagne Municipale.</p>
+            <div class="footer-links">
+                <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            </div>
         </div>
     </footer>
 
