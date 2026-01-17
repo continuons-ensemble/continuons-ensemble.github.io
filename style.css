@@ -350,10 +350,6 @@ body {
     border: 2px solid var(--primary-color);
 }
 
-.program-more-btn .more-text {
-    /* Supprimé flex: 1 et text-align */
-}
-
 .program-more-btn i {
     font-size: 0.75rem;
     transition: var(--transition);
