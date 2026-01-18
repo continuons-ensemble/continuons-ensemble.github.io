@@ -217,6 +217,10 @@ main {
     margin-bottom: 0.25rem;
 }
 
+.hero .nowrap {
+    white-space: nowrap;
+}
+
 .hero-subtitle {
     font-size: 1.25rem;
     opacity: 0.9;
@@ -664,6 +668,8 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 .member-avatar {
@@ -703,20 +709,22 @@ main {
 }
 
 .member-tag {
-    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: -50px;
     background: #10b981;
     color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 1.5rem;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 auto 1rem auto;
-    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
     text-align: center;
-    display: block;
-    width: fit-content;
+    transform: rotate(45deg);
+    transform-origin: center;
+    width: 190px;
+    z-index: 10;
 }
 
 .member-details {
@@ -1389,7 +1397,7 @@ footer p {
     }
     
     .hero {
-        padding: 2rem 0 3rem;
+        padding: 1rem 0 3rem;
     }
     
     .hero-logo {
@@ -1793,7 +1801,6 @@ footer p {
 
 /* Cadre pour les articles Facebook */
 .media-type-facebook {
-    border: 3px solid #1877f2;
     box-shadow: 0 4px 12px rgba(24, 119, 242, 0.15);
     position: relative;
 }
@@ -1805,7 +1812,6 @@ footer p {
     left: -3px;
     right: -3px;
     bottom: -3px;
-    background: linear-gradient(45deg, #1877f2, #42a5f5, #1877f2);
     z-index: -1;
     border-radius: var(--border-radius);
     opacity: 0.8;
