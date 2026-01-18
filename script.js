@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Promouvoir l\'écoute, le respect et l\'acceptation des différences (inclusion, lutte contre le harcèlement...)',
                 'Valoriser le bénévolat et renforcer l\'aide aux associations de la commune',
                 'Favoriser et développer les initiatives culturelles et sportives',
-                'Poursuivre et développer les actions solidaires (telethon, octobre rose, collecte alimentaire...)',
+                'Poursuivre et développer les actions solidaires (téléthon, octobre rose, collecte alimentaire...)',
             ]
         },
         '2': {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Sensibiliser les jeunes à l\'environnement (école, ateliers, actions concrètes)',
                 'Développer et lancer des chantiers solidaires participatifs (végétalisation, mettre en valeur le patrimoine...)',
                 'Créer un projet "une naissance, un arbre"',
-                'Poursuivre la rénovation énergétique des batiments communaux',
+                'Poursuivre la rénovation énergétique des bâtiments communaux',
                 'Mettre en place un plan communal de lutte contre le frelon asiatique',
             ]
         },
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Communication et participation citoyenne',
             subtitle: 'Développer une communication claire et accessible',
             items: [
-                'Créer un site internet pour un meilleur accès aux informations communales, aux démarches en lignes (Documents, Cerfas, réservation de la salle, prise de rendez-vous avec les élus...)',
+                'Créer un site internet pour un meilleur accès aux informations communales, aux démarches en ligne (Documents, Cerfas, réservation de la salle, prise de rendez-vous avec les élus...)',
                 'Mettre en place un panneau d\'informations numérique connecté',
                 'Créer une boîte à idées citoyennes (physique et numérique)',
                 'Continuer la communication sur les différents réseaux sociaux',
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Budgétiser et créer un plan de réfection des voiries à moyen terme',
                 'Aménager une zone de jeux et de loisirs pour les jeunes enfants',
                 'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail...)',
-                'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéosurveillance aux entrées',
+                'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéoprotection aux entrées',
                 'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
             ]
         }
