@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Vivre ensemble et solidarité',
             subtitle: 'Faire de notre commune un lieu où chacun trouve sa place',
             items: [
-                'Promouvoir l\'écoute, le respect et l\'acceptation des différences',
-                'Poursuivre et développer les actions solidaires',
+                'Promouvoir l\'écoute, le respect et l\'acceptation des différences (inclusion, lutte contre le harcèlement...)',
+                'Valoriser le bénévolat et renforcer l\'aide aux associations de la commune',
                 'Favoriser et développer les initiatives culturelles et sportives',
-                'Valoriser le bénévolat et renforcer l\'aide aux associations de la commune'
+                'Poursuivre et développer les actions solidaires (telethon, octobre rose, collecte alimentaire...)',
             ]
         },
         '2': {
@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Environnement et cadre de vie',
             subtitle: 'Préserver notre environnement de manière durable',
             items: [
-                'Sensibiliser les jeunes à l\'environnement (école, ateliers, actions concrètes)',
-                'Promouvoir le développement des énergies vertes',
-                'Lancer des chantiers solidaires participatifs',
-                'Mettre en place un plan communal de lutte contre le frelon asiatique',
                 'Entretenir les voies publiques, chemins et fossés',
+                'Renouveler et développer le mobilier urbain',
+                'Sensibiliser les jeunes à l\'environnement (école, ateliers, actions concrètes)',
+                'Développer et lancer des chantiers solidaires participatifs (végétalisation, mettre en valeur le patrimoine...)',
                 'Créer un projet "une naissance, un arbre"',
-                'Renouveler et développer le mobilier urbain'
+                'Poursuivre la rénovation énergétique des batiments communaux',
+                'Mettre en place un plan communal de lutte contre le frelon asiatique',
             ]
         },
         '3': {
@@ -59,12 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Sécurité et prévention',
             subtitle: 'Renforcer la tranquillité publique par la prévention, la vigilance et le dialogue',
             items: [
-                'Soutenir la Police Municipale',
-                'Sécuriser les voies publiques notamment au pont à l\'entrée du village',
+                'Sécuriser les voies publiques aux zones sensibles du village',
                 'Améliorer l\'aménagement et la signalisation sur les routes et les trottoirs',
-                'Mettre en place des ateliers de sécurité routière',
-                'Déployer un Projet de sécurité civile',
-                'Organiser des formations aux premiers secours citoyens-prévention'
+                'Consolider la coopération avec la police municipale pour une action de proximité efficace',
+                'Mettre en place des ateliers de sécurité routière (prévention, sensibilisation...)',
+                'Déployer un Projet de sécurité civile (réserve citoyenne, continuité des services, formations aux premiers secours...)'
             ]
         },
         '4': {
@@ -72,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Communication et participation citoyenne',
             subtitle: 'Développer une communication claire et accessible',
             items: [
-                'Créer un site internet pour un meilleur accès aux informations',
-                'Développer les réseaux sociaux municipaux',
-                'Mettre en place un panneau d\'affichage d\'informations',
-                'Créer une boîte à idées citoyennes (physique et numérique)'
+                'Créer un site internet pour un meilleur accès aux informations communales, aux démarches en lignes (Documents, Cerfas, réservation de la salle, prise de rendez-vous avec les élus...)',
+                'Mettre en place un panneau d\'informations numérique connecté',
+                'Créer une boîte à idées citoyennes (physique et numérique)',
+                'Continuer la communication sur les différents réseaux sociaux',
             ]
         },
         '5': {
@@ -83,10 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Attractivité de la commune',
             subtitle: 'Valoriser notre territoire et son identité',
             items: [
+                'Créer une signalétique claire des commerces et services dans le village',
                 'Baliser et mettre en avant les sentiers de randonnée',
-                'Créer une signalétique claire des commerces et services',
-                'Actualiser le plan de la commune',
-                'Développer les journées du patrimoine'
+                'Développer les journées du patrimoine (exposition photographique, projection, visite commentée, parcours découverte, spectacle...)',
+                'Actualiser le plan de la commune'
             ]
         },
         '6': {
@@ -94,11 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Services à la population',
             subtitle: 'Maintenir et améliorer les services de proximité',
             items: [
-                'Développer un système d\'échange de savoirs et d\'entraide',
-                'Créer une bibliothèque municipale et une boîte à livres',
+                'Mettre en place des achats/services groupés (bois, pellets, ramonage...)',
+                'Développer un système d\'échange de savoirs et d\'entraide entre habitants',
+                'Mise en place de boîtes à livres et colportage chez les seniors ou personnes ne pouvant se déplacer',
                 'Organiser un forum des entreprises et des commerçants',
-                'Mettre en place des achats groupés (bois/pellets...)',
-                'Organiser une consultation citoyenne sur les horaires de garderie et crèche'
+                'Organiser une consultation des usagers sur les horaires de garderie et crèche'
             ]
         },
         '7': {
@@ -106,13 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Jeunesse',
             subtitle: 'Donner aux jeunes les moyens de s\'épanouir',
             items: [
-                'Créer un Conseil municipal Jeunes',
+                'Créer un Conseil Municipal des Jeunes',
                 'Valoriser la participation des jeunes aux activités solidaires',
                 'Mettre en place un chèque associations',
                 'Aider à la formation BAFA',
                 'Développer les animations culturelles, sportives, 2.0...',
                 'Poursuivre le développement des activités périscolaires et petite enfance',
-                'Proposer des séjours, colonies aux enfants de 6 à 17 ans'
+                'Proposer des séjours, Raids Aventure Ados, colonies pour les jeunes de 6 à 17 ans'
             ]
         },
         '8': {
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Lien intergénérationnel',
             subtitle: 'Valoriser la transmission, le respect et le partage entre générations',
             items: [
-                'Développer des temps de partage intergénérationnels',
+                'Développer des temps de partage intergénérationnels (jeux de societé, ateliers créatifs, cuisine...)',
                 'Créer un porte drapeau "Jeune" et des actions sur le devoir de mémoire',
                 'Proposer un voyage à thème favorisant la transmission des savoirs',
                 'Créer un jardin partagé',
@@ -133,10 +132,10 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'Préparer la commune de demain',
             items: [
                 'Budgétiser et créer un plan de réfection des voiries à moyen terme',
-                'Aménager une zone de jeux et de loisirs pour les enfants',
-                'Aménager la salle du deuxième étage de l\'école',
-                'Déployer raisonnablement la vidéosurveillance aux entrées du village',
-                'Engager la réflexion collective à la création d\'un bâtiment communal'
+                'Aménager une zone de jeux et de loisirs pour les jeunes enfants',
+                'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail...)',
+                'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéosurveillance aux entrées',
+                'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
             ]
         }
     };

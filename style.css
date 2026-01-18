@@ -110,6 +110,10 @@ main {
     height: 70px;
 }
 
+.nav-logo a {
+    text-decoration: none;
+}
+
 .nav-logo h2 {
     color: var(--primary-color);
     font-weight: 600;
