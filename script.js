@@ -171,7 +171,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Afficher la modale
                     programModal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden'; // Empêcher le scroll de la page
+                    document.body.classList.add('modal-open');
+                    
+                    // Scroll vers le haut de la modale sur mobile
+                    setTimeout(() => {
+                        const modalContent = programModal.querySelector('.modal-content');
+                        if (modalContent) {
+                            modalContent.scrollTop = 0;
+                        }
+                    }, 100);
                 }
             });
         }
@@ -181,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', function() {
             programModal.style.display = 'none';
-            document.body.style.overflow = ''; // Restaurer le scroll
+            document.body.classList.remove('modal-open');
         });
     }
 
@@ -190,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         programModal.addEventListener('click', function(e) {
             if (e.target === programModal) {
                 programModal.style.display = 'none';
-                document.body.style.overflow = '';
+                document.body.classList.remove('modal-open');
             }
         });
     }
@@ -199,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && programModal.style.display === 'flex') {
             programModal.style.display = 'none';
-            document.body.style.overflow = '';
+            document.body.classList.remove('modal-open');
         }
     });
 

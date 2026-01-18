@@ -59,6 +59,15 @@
     box-sizing: border-box;
 }
 
+/* Classe pour le body quand la modale est ouverte */
+body.modal-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-overflow-scrolling: none !important;
+}
+
 body {
     font-family: var(--font-family);
     line-height: 1.6;
@@ -67,6 +76,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none; /* Empêcher le scroll bounce */
 }
 
 main {
@@ -405,6 +416,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for better mobile support */
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 2000;
     display: flex;
@@ -413,6 +426,7 @@ main {
     padding: 2rem;
     backdrop-filter: blur(5px);
     animation: fadeIn 0.3s ease-out;
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -431,6 +445,7 @@ main {
     max-width: 900px;
     width: 100%;
     max-height: 90vh;
+    max-height: 90dvh; /* Dynamic viewport height for mobile */
     position: relative;
     animation: slideInModal 0.4s ease-out;
     display: flex;
@@ -455,13 +470,13 @@ main {
     position: relative;
     flex-shrink: 0;
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    min-height: 80px;
 }
 
 .close-modal {
     position: absolute;
-    top: 50%;
+    top: 1.5rem;
     right: 2rem;
-    transform: translateY(-50%);
     background: none;
     border: none;
     color: var(--text-light);
@@ -475,11 +490,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .close-modal:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-50%) rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .modal-content {
@@ -1274,10 +1290,16 @@ footer p {
     /* Responsive pour la modale */
     .program-modal-overlay {
         padding: 1rem;
+        height: 100vh;
+        height: 100dvh; /* Dynamic viewport height */
+        align-items: flex-start;
+        padding-top: 2rem;
     }
     
     .program-modal {
-        max-height: 95vh;
+        max-height: 90vh;
+        max-height: 90dvh; /* Dynamic viewport height */
+        margin: 0;
     }
     
     .modal-content {
@@ -1310,10 +1332,13 @@ footer p {
     
     .close-modal {
         right: 1rem;
+        top: 1rem;
         font-size: 1.8rem;
         width: 50px;
         height: 50px;
         padding: 0.75rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .modal-icon {
@@ -1326,8 +1351,11 @@ footer p {
     }
     
     .modal-header {
-        padding: 2rem 1.5rem;
-        min-height: 60px;
+        padding: 1.5rem 1.5rem;
+        min-height: 80px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
     
     .modal-title-section {
