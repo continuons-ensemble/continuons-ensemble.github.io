@@ -171,14 +171,39 @@ main {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: var(--text-light);
     text-align: center;
-    padding: 3rem 0 3rem;
+    padding: 2rem 0 2rem;
     margin-top: 70px;
 }
 
 .hero h1 {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.hero-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.hero-city {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.hero-leader {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
 }
 
 .hero-subtitle {
@@ -597,35 +622,60 @@ main {
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
 .team-member {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .team-member:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .member-card {
-    padding: 2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .member-avatar {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .member-avatar i {
     font-size: 4rem;
     color: var(--primary-color);
+}
+
+.member-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%;
+    border: 3px solid var(--primary-color);
+}
+
+.member-photo2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 10%;
+    border: 3px solid var(--primary-color);
 }
 
 .member-info h3 {
@@ -634,6 +684,23 @@ main {
     text-align: center;
     margin-bottom: 1rem;
     color: var(--text-primary);
+}
+
+.member-tag {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+    text-align: center;
+    display: block;
+    width: fit-content;
 }
 
 .member-details {
@@ -1025,7 +1092,7 @@ footer {
     background-color: var(--bg-dark);
     color: var(--text-light);
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
     margin-top: auto;
 }
 
@@ -1294,7 +1361,11 @@ footer p {
     }
     
     .hero {
-        padding: 6rem 0 3rem;
+        padding: 2rem 0 3rem;
+    }
+    
+    .hero-logo {
+        display: none;
     }
     
     .program-section,
@@ -2171,5 +2242,92 @@ footer p {
     
     .policy-footer {
         padding: 1.5rem;
+    }
+}
+
+/* Section équipe collée au hero */
+.team-showcase {
+    padding: 0;
+    margin: 0;
+    background: var(--bg-primary);
+}
+
+.team-showcase .container {
+    padding: 0;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Styles pour la photo d'équipe avec bouton superposé */
+.team-photo-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.team-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.program-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.program-button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.program-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive pour la photo d'équipe */
+@media (max-width: 768px) {
+    .team-showcase .container {
+        max-width: 100%;
+    }
+    
+    .team-photo-container {
+        margin: 0;
+    }
+    
+    .program-button {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-button {
+        bottom: 0.5rem;
+        right: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
     }
 }
