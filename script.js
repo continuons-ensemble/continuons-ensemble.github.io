@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Valoriser le bénévolat et renforcer l\'aide aux associations de la commune',
                 'Favoriser et développer les initiatives culturelles et sportives',
                 'Poursuivre et développer les actions solidaires (téléthon, octobre rose, collecte alimentaire...)',
+                'Développer un système d\'échange de savoirs et d\'entraide entre habitants',
             ]
         },
         '2': {
@@ -93,8 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Services à la population',
             subtitle: 'Maintenir et améliorer les services de proximité',
             items: [
-                'Mettre en place des achats/services groupés (bois, pellets, ramonage...)',
-                'Développer un système d\'échange de savoirs et d\'entraide entre habitants',
+                'Mettre en place des achats/services groupés (bois, pellets, ramonage, composteurs...)',
                 'Mise en place de boîtes à livres et colportage chez les seniors ou personnes ne pouvant se déplacer',
                 'Organiser un forum des entreprises et des commerçants',
                 'Organiser une consultation des usagers sur les horaires de garderie et crèche'
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Mettre en place un chèque associations',
                 'Aider à la formation BAFA',
                 'Développer les animations culturelles, sportives, 2.0...',
-                'Poursuivre le développement des activités périscolaires et petite enfance',
+                'Poursuivre le développement des activités périscolaires enfance et petite enfance',
                 'Proposer des séjours, Raids Aventure Ados, colonies pour les jeunes de 6 à 17 ans'
             ]
         },
@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'Valoriser la transmission, le respect et le partage entre générations',
             items: [
                 'Développer des temps de partage intergénérationnels (jeux de societé, ateliers créatifs, cuisine...)',
-                'Créer un porte drapeau "Jeune" et des actions sur le devoir de mémoire',
+                'Encourager un jeune à s\'engager comme porte drapeau',
+                'Tisser des liens entre les génératiuons autour du souvenir',
                 'Proposer un voyage à thème favorisant la transmission des savoirs',
                 'Créer un jardin partagé',
                 'Favoriser la rencontre aînés/jeunes une fois par mois à la cantine scolaire'
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             items: [
                 'Budgétiser et créer un plan de réfection des voiries à moyen terme',
                 'Aménager une zone de jeux et de loisirs pour les jeunes enfants',
-                'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail...)',
+                'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail associative...)',
                 'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéoprotection aux entrées',
                 'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
             ]
