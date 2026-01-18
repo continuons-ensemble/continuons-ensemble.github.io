@@ -729,10 +729,10 @@ main {
 
 .member-details {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 1rem;
-    flex-wrap: wrap;
 }
 
 .age,
