@@ -636,7 +636,7 @@ main {
 
 /* Team Section */
 .team-section {
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .team-grid {
@@ -1408,7 +1408,7 @@ footer p {
     .team-section,
     .contact-section,
     .ideas-showcase {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
     
     .program-card,
@@ -2242,6 +2242,35 @@ footer p {
     text-decoration: underline;
 }
 
+/* Footer responsive styles */
+.footer-text {
+    display: inline;
+}
+
+.footer-line1,
+.footer-line2 {
+    display: inline;
+}
+
+.footer-line1:after {
+    content: " ";
+}
+
+@media (max-width: 768px) {
+    .footer-text {
+        display: block;
+    }
+    
+    .footer-line1:after {
+        content: "";
+        display: block;
+    }
+    
+    .footer-line2 {
+        display: block;
+    }
+}
+
 /* Responsive pour la politique de confidentialité */
 @media (max-width: 768px) {
     .privacy-policy-section {
@@ -2310,10 +2339,9 @@ footer p {
     display: block;
 }
 
-.program-button {
+.program-button, .team-button {
     position: absolute;
     bottom: 1rem;
-    right: 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: var(--text-light);
     padding: 0.75rem 1.5rem;
@@ -2328,14 +2356,22 @@ footer p {
     -webkit-backdrop-filter: blur(10px);
 }
 
-.program-button:hover {
+.program-button {
+    right: 1rem;
+}
+
+.team-button {
+    left: 1rem;
+}
+
+.program-button:hover, .team-button:hover {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.program-button:active {
+.program-button:active, .team-button:active {
     transform: translateY(0);
 }
 
@@ -2349,19 +2385,33 @@ footer p {
         margin: 0;
     }
     
-    .program-button {
+    .program-button, .team-button {
         bottom: 0.75rem;
-        right: 0.75rem;
         padding: 0.625rem 1.25rem;
         font-size: 0.8rem;
+    }
+    
+    .program-button {
+        right: 0.75rem;
+    }
+    
+    .team-button {
+        left: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
-    .program-button {
+    .program-button, .team-button {
         bottom: 0.5rem;
-        right: 0.5rem;
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
+    }
+    
+    .program-button {
+        right: 0.5rem;
+    }
+    
+    .team-button {
+        left: 0.5rem;
     }
 }
