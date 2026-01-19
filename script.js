@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             items: [
                 'Développer des temps de partage intergénérationnels (jeux de societé, ateliers créatifs, cuisine...)',
                 'Encourager un jeune à s\'engager comme porte drapeau',
-                'Tisser des liens entre les génératiuons autour du souvenir',
+                'Tisser des liens entre les générations autour du souvenir',
                 'Proposer un voyage à thème favorisant la transmission des savoirs',
                 'Créer un jardin partagé',
                 'Favoriser la rencontre aînés/jeunes une fois par mois à la cantine scolaire'
