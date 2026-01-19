@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'Maintenir et améliorer les services de proximité',
             items: [
                 'Mettre en place des achats/services groupés (bois, pellets, ramonage, composteurs...)',
-                'Mise en place de boîtes à livres et colportage chez les seniors ou personnes ne pouvant se déplacer',
+                'Mettre en place des boîtes à livres et colportage chez les seniors ou personnes ne pouvant se déplacer',
                 'Organiser un forum des entreprises et des commerçants',
                 'Organiser une consultation des usagers sur les horaires de garderie et crèche'
             ]
