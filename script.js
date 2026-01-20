@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Promouvoir l\'écoute, le respect et l\'acceptation des différences (inclusion, lutte contre le harcèlement...)',
                 'Valoriser le bénévolat et renforcer l\'aide aux associations de la commune',
                 'Favoriser et développer les initiatives culturelles et sportives',
-                'Poursuivre et développer les actions solidaires (téléthon, octobre rose, collecte alimentaire...)',
+                'Poursuivre et développer les actions solidaires (Téléthon, Octobre rose, collecte alimentaire...)',
                 'Développer un système d\'échange de savoirs et d\'entraide entre habitants',
             ]
         },
@@ -72,9 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Communication et participation citoyenne',
             subtitle: 'Développer une communication claire et accessible',
             items: [
-                'Créer un site internet pour un meilleur accès aux informations communales, aux démarches en ligne (Documents, Cerfas, réservation de la salle, prise de rendez-vous avec les élus...)',
+                'Créer un site internet pour un meilleur accès aux informations communales, aux démarches en ligne (documents, CERFA, réservation de la salle, prise de rendez-vous avec les élus...)',
                 'Mettre en place un panneau d\'informations numérique connecté',
                 'Créer une boîte à idées citoyennes (physique et numérique)',
+                'Réaliser un bilan de mi-mandat afin d’évaluer les actions menées et d’en rendre compte publiquement',
                 'Continuer la communication sur les différents réseaux sociaux',
             ]
         },
@@ -111,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Aider à la formation BAFA',
                 'Développer les animations culturelles, sportives, 2.0...',
                 'Poursuivre le développement des activités périscolaires enfance et petite enfance',
+                'Créer un conseil de cantine, réunissant élèves, animateurs, parents et municipalité pour imaginer ensemble des activités créatives, sportives et ludiques répondant aux besoins des enfants',
                 'Proposer des séjours, Raids Aventure Ados, colonies pour les jeunes de 6 à 17 ans'
             ]
         },
@@ -119,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Lien intergénérationnel',
             subtitle: 'Valoriser la transmission, le respect et le partage entre générations',
             items: [
-                'Développer des temps de partage intergénérationnels (jeux de societé, ateliers créatifs, cuisine...)',
-                'Encourager un jeune à s\'engager comme porte drapeau',
+                'Développer des temps de partage intergénérationnels (jeux de société, ateliers créatifs, cuisine...)',
+                'Encourager un jeune à s\'engager comme porte-drapeau',
                 'Tisser des liens entre les générations autour du souvenir',
                 'Proposer un voyage à thème favorisant la transmission des savoirs',
                 'Créer un jardin partagé',
