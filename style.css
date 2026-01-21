@@ -567,6 +567,10 @@ main {
     background: linear-gradient(135deg, var(--theme-9-start), var(--theme-9-end));
 }
 
+.modal-icon[data-theme="10"] {
+    background: linear-gradient(135deg, rgb(139, 92, 246), rgb(168, 85, 247));
+}
+
 .modal-icon i {
     font-size: 1.5rem;
     color: var(--text-light);
@@ -1113,6 +1117,97 @@ main {
     font-size: 0.875rem;
     color: var(--text-muted);
     font-style: italic;
+}
+
+/* Separator Section */
+.separator-section {
+    padding: 2rem 0;
+    background-color: var(--bg-primary);
+}
+
+.separator-line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator-icon {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: var(--shadow);
+    }
+    50% {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Communautaires Section */
+.program-section.communautaires {
+    background-color: var(--bg-primary);
+    padding: 1rem 0;
+}
+
+.program-section.communautaires .program-item {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+                linear-gradient(135deg, var(--primary-color), var(--secondary-color)) border-box;
+}
+
+.program-section.communautaires .program-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                linear-gradient(135deg, var(--primary-color), var(--secondary-color)) border-box;
+}
+
+/* Nouveau thème de couleur pour la carte communautaire */
+[data-theme="10"] .program-icon {
+    background: linear-gradient(135deg, #8B5CF6, #A855F7);
 }
 
 /* Footer */

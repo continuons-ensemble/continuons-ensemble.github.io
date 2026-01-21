@@ -140,6 +140,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéoprotection aux entrées',
                 'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
             ]
+        },
+        '10': {
+            icon: 'fas fa-building',
+            title: 'Élections Communautaires',
+            subtitle: 'Notre engagement pour la Communauté d\'Agglomération',
+            items: [
+                'Être un partenaire actif et force de proposition : Faire de notre commune un acteur pleinement engagé dans le projet de territoire de la communauté d\'agglomération, présent dans les décisions et porteur de propositions utiles au territoire.',
+                'Rendre l\'action intercommunale plus lisible et plus proche : Informer clairement les habitants des décisions intercommunales et renforcer le lien entre la commune, l\'agglomération et les citoyens.',
+                'Mutualiser pour mieux agir au service des habitants : Mutualiser les moyens et les compétences avec l\'agglomération et ses communes, lorsque cela permet un meilleur service public, plus lisible et plus accessible.'
+            ]
         }
     };
     
