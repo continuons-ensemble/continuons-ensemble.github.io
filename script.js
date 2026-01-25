@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         '8': {
-            icon: 'fas fa-users-between-lines',
+            icon: 'fas fa-handshake',
             title: 'Lien intergénérationnel',
             subtitle: 'Valoriser la transmission, le respect et le partage entre générations',
             items: [
