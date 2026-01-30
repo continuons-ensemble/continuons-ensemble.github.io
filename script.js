@@ -549,4 +549,173 @@ if ('IntersectionObserver' in window) {
     document.querySelectorAll('img[data-src]').forEach(img => {
         imageObserver.observe(img);
     });
-}
+
+    // Animation scroll progressive pour la section équipe et disparition du hero
+    function handleTeamScrollAnimation() {
+        const teamContent = document.querySelector('.team-content');
+        const heroSection = document.querySelector('.hero');
+        if (!teamContent || !heroSection) {
+            console.log('Éléments non trouvés:', { teamContent, heroSection });
+            return;
+        }
+
+        const teamShowcase = document.querySelector('.team-showcase');
+        if (!teamShowcase) {
+            console.log('Team showcase non trouvé');
+            return;
+        }
+
+        // Fonction d'easing pour un effet plus naturel
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        }
+
+        let lastScrollY = 0;
+
+        // Fonction pour s'assurer que la navbar reste toujours visible
+        function ensureNavbarVisible() {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.style.position = 'fixed';
+                navbar.style.top = '0';
+                navbar.style.zIndex = '10000';
+                navbar.style.width = '100%';
+                navbar.style.opacity = '1';
+                navbar.style.visibility = 'visible';
+                navbar.style.transform = 'translateZ(0)';
+            }
+        }
+
+        function updateTeamLayout() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            // Toujours s'assurer que la navbar est visible
+            ensureNavbarVisible();
+            
+            // Ne pas déclencher sur mobile
+            if (window.innerWidth <= 768) {
+                heroSection.style.opacity = '1';
+                heroSection.style.transform = 'translateY(0)';
+                heroSection.style.pointerEvents = 'auto';
+                return;
+            }
+            
+            // Animation très très courte et immédiate
+            const animationStart = 0;
+            const animationEnd = windowHeight * 0.3;
+            
+            // Calculer le progrès avec une gestion robuste
+            let progress = 0;
+            if (scrollY <= animationStart) {
+                progress = 0;
+            } else if (scrollY >= animationEnd) {
+                progress = 1;
+            } else {
+                progress = scrollY / animationEnd;
+            }
+            
+            const easedProgress = easeInOutCubic(progress);
+            
+            // Toujours appliquer les valeurs, même pour les cas extrêmes
+            if (progress >= 1) {
+                // Animation terminée - état final
+                teamContent.style.setProperty('--photo-width', '60%');
+                teamContent.style.setProperty('--text-opacity', '1');
+                teamContent.style.setProperty('--text-transform', 'translateX(0px)');
+                teamContent.style.setProperty('--content-gap', '3rem');
+                heroSection.style.opacity = '0';
+                heroSection.style.transform = 'translate3d(0, -100px, 0)';
+                heroSection.style.pointerEvents = 'none';
+                heroSection.style.visibility = 'hidden';
+                heroSection.style.zIndex = '-1';
+            } else if (progress <= 0) {
+                // Animation non commencée - état initial
+                teamContent.style.setProperty('--photo-width', '100%');
+                teamContent.style.setProperty('--text-opacity', '0');
+                teamContent.style.setProperty('--text-transform', 'translateX(30px)');
+                teamContent.style.setProperty('--content-gap', '0rem');
+                heroSection.style.opacity = '1';
+                heroSection.style.transform = 'translate3d(0, 0px, 0)';
+                heroSection.style.pointerEvents = 'auto';
+                heroSection.style.visibility = 'visible';
+                heroSection.style.zIndex = 'auto';
+            } else {
+                // Animation en cours - valeurs progressives
+                const photoWidth = Math.round(100 - (easedProgress * 40));
+                const textOpacity = Math.max(0, (easedProgress - 0.05) / 0.95);
+                const textTransform = Math.round(30 - (easedProgress * 30));
+                const contentGap = Math.round(easedProgress * 3 * 10) / 10;
+                
+                const heroOpacity = Math.max(0, 1 - easedProgress);
+                const heroTransform = Math.round(easedProgress * -100); // Plus de déplacement
+                
+                // Appliquer les variables CSS
+                teamContent.style.setProperty('--photo-width', `${photoWidth}%`);
+                teamContent.style.setProperty('--text-opacity', textOpacity.toString());
+                teamContent.style.setProperty('--text-transform', `translateX(${textTransform}px)`);
+                teamContent.style.setProperty('--content-gap', `${contentGap}rem`);
+                
+                heroSection.style.opacity = heroOpacity.toString();
+                heroSection.style.transform = `translate3d(0, ${heroTransform}px, 0)`;
+                heroSection.style.pointerEvents = heroOpacity > 0.1 ? 'auto' : 'none';
+                
+                // Gérer la visibilité plus agressivement
+                if (heroOpacity < 0.1) {
+                    heroSection.style.visibility = 'hidden';
+                    heroSection.style.zIndex = '-1';
+                } else {
+                    heroSection.style.visibility = 'visible';
+                    heroSection.style.zIndex = 'auto';
+                }
+            }
+        }
+        // Écouter le scroll avec gestion améliorée
+        let ticking = false;
+        let lastKnownScrollPosition = 0;
+        
+        function handleScroll() {
+            lastKnownScrollPosition = window.scrollY;
+            
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateTeamLayout();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        // Également écouter les événements de scroll avec une fréquence plus élevée
+        let timeoutId = null;
+        function handleScrollEnd() {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                // Force une mise à jour après que le scroll soit terminé
+                updateTeamLayout();
+            }, 50);
+        }
+
+        // Écouter le resize pour désactiver sur mobile
+        function handleResize() {
+            updateTeamLayout();
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('scroll', handleScrollEnd, { passive: true });
+        window.addEventListener('resize', handleResize);
+        
+        // Force la navbar à rester visible en permanence
+        setInterval(ensureNavbarVisible, 100);
+        
+        // Vérification initiale
+        updateTeamLayout();
+        ensureNavbarVisible();
+        // Vérification initiale
+        updateTeamLayout();
+    }
+
+    // Initialiser l'animation scroll pour l'équipe
+    handleTeamScrollAnimation();
+
+};
