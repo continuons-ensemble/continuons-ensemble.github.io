@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             items: [
                 'Budgétiser et créer un plan de réfection des voiries à moyen terme',
                 'Aménager une zone de jeux et de loisirs pour les jeunes enfants',
+                'Poursuivre en 2026 la création du trottoir au bas de la rue de Fouquières',
                 'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail associative...)',
                 'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéoprotection aux entrées',
                 'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
