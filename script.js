@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Développer les animations culturelles, sportives, 2.0...',
                 'Poursuivre le développement des activités périscolaires enfance et petite enfance',
                 'Créer un conseil de cantine, réunissant élèves, animateurs, parents et municipalité pour imaginer ensemble des activités créatives, sportives et ludiques répondant aux besoins des enfants',
-                'Proposer des séjours, Raids Aventure Ados, colonies pour les jeunes de 6 à 17 ans'
+                'Proposer des séjours, Raids Aventure Ados, colonies pour les jeunes de 6 à 17 ans',
+                'Poursuivre l\'aménagement du plateau d\'évolution de l\'espace Agrestis pour créer une zone multisports accessible à tous, favorisant la pratique sportive, le bien-être et la convivialité',
             ]
         },
         '8': {
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             items: [
                 'Budgétiser et créer un plan de réfection des voiries à moyen terme',
                 'Aménager une zone de jeux et de loisirs pour les jeunes enfants',
-                'Poursuivre en 2026 la création du trottoir au bas de la rue de Fouquières',
+                'Poursuivre les travaux débutés en 2025 (notamment la création du trottoir au bas de la rue de Fouquières, caniveaux et plaques d\'égout...)',
                 'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail associative...)',
                 'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéoprotection aux entrées',
                 'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
