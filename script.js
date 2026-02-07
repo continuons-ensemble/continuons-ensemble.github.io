@@ -3,6 +3,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
+    // Système "Voir plus" pour les descriptions des membres d'équipe
+    const memberCards = document.querySelectorAll('.team-member');
+    
+    memberCards.forEach(card => {
+        const description = card.querySelector('.member-description-full');
+        
+        if (description) {
+            // Créer le bouton "Voir plus" s'il n'existe pas déjà
+            let seeMoreBtn = card.querySelector('.see-more-btn');
+            if (!seeMoreBtn) {
+                seeMoreBtn = document.createElement('button');
+                seeMoreBtn.className = 'see-more-btn';
+                seeMoreBtn.innerHTML = 'Voir plus <span class="icon">▼</span>';
+                
+                // Insérer le bouton après la description
+                description.parentNode.insertBefore(seeMoreBtn, description.nextSibling);
+            }
+            
+            // Vérifier si le contenu nécessite un bouton "Voir plus"
+            if (description.scrollHeight <= 200) {
+                seeMoreBtn.classList.add('hidden');
+                description.style.maxHeight = 'none';
+            }
+            
+            seeMoreBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const icon = seeMoreBtn.querySelector('.icon');
+                
+                if (description.classList.contains('expanded')) {
+                    description.classList.remove('expanded');
+                    seeMoreBtn.classList.remove('expanded');
+                    seeMoreBtn.innerHTML = 'Voir plus <span class="icon">▼</span>';
+                } else {
+                    // Fermer toutes les autres descriptions ouvertes
+                    memberCards.forEach(otherCard => {
+                        const otherDesc = otherCard.querySelector('.member-description-full');
+                        const otherBtn = otherCard.querySelector('.see-more-btn');
+                        if (otherDesc && otherDesc !== description && otherDesc.classList.contains('expanded')) {
+                            otherDesc.classList.remove('expanded');
+                            if (otherBtn) {
+                                otherBtn.classList.remove('expanded');
+                                otherBtn.innerHTML = 'Voir plus <span class="icon">▼</span>';
+                            }
+                        }
+                    });
+                    
+                    // Ouvrir la description actuelle
+                    description.classList.add('expanded');
+                    seeMoreBtn.classList.add('expanded');
+                    seeMoreBtn.innerHTML = 'Voir moins <span class="icon">▼</span>';
+                }
+            });
+        }
+    });
+
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
@@ -34,11 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Vivre ensemble et solidarité',
             subtitle: 'Faire de notre commune un lieu où chacun trouve sa place',
             items: [
-                'Promouvoir l\'écoute, le respect et l\'acceptation des différences (inclusion, lutte contre le harcèlement...)',
-                'Valoriser le bénévolat et renforcer l\'aide aux associations de la commune',
-                'Favoriser et développer les initiatives culturelles et sportives',
-                'Poursuivre et développer les actions solidaires (Téléthon, Octobre rose, collecte alimentaire...)',
-                'Développer un système d\'échange de savoirs et d\'entraide entre habitants',
+                "Promouvoir l'écoute, le respect et l'acceptation des différences (inclusion, lutte contre le harcèlement...).",
+                "Valoriser le bénévolat et renforcer l'aide aux associations de la commune.",
+                "Favoriser et développer les initiatives culturelles et sportives.",
+                "Poursuivre et développer les actions solidaires (Téléthon, Octobre rose, collecte alimentaire...).",
+                "Développer un système d'échange de savoirs et d'entraide entre habitants."
             ]
         },
         '2': {
@@ -46,13 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Environnement et cadre de vie',
             subtitle: 'Préserver notre environnement de manière durable',
             items: [
-                'Entretenir les voies publiques, chemins et fossés',
-                'Renouveler et développer le mobilier urbain',
-                'Sensibiliser les jeunes à l\'environnement (école, ateliers, actions concrètes)',
-                'Développer et lancer des chantiers solidaires participatifs (végétalisation, mettre en valeur le patrimoine...)',
-                'Créer un projet "une naissance, un arbre"',
-                'Poursuivre la rénovation énergétique des bâtiments communaux',
-                'Mettre en place un plan communal de lutte contre le frelon asiatique',
+                "Entretenir les voies publiques, chemins et fossés communaux.",
+                "Renouveler et développer le mobilier urbain.",
+                "Sensibiliser les jeunes à l'environnement (école, ateliers, actions concrètes).",
+                "Développer et lancer des chantiers solidaires participatifs (végétalisation, mise en valeur du patrimoine...).",
+                "Créer un projet 'une naissance, un arbre'.",
+                "Poursuivre la rénovation énergétique des bâtiments communaux.",
+                "Préserver les espaces verts et agricoles, et limiter le développement des terrains constructibles.",
+                "Mettre en place un plan communal de lutte contre le frelon asiatique."
             ]
         },
         '3': {
@@ -60,34 +117,34 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Sécurité et prévention',
             subtitle: 'Renforcer la tranquillité publique par la prévention, la vigilance et le dialogue',
             items: [
-                'Sécuriser les voies publiques aux zones sensibles du village',
-                'Améliorer l\'aménagement et la signalisation sur les routes et les trottoirs',
-                'Consolider la coopération avec la police municipale pour une action de proximité efficace',
-                'Mettre en place des ateliers de sécurité routière (prévention, sensibilisation...)',
-                'Déployer un Projet de sécurité civile (réserve citoyenne, continuité des services, formations aux premiers secours...)'
+                "Sécuriser les voies publiques aux zones sensibles du village.",
+                "Améliorer l'aménagement et la signalisation sur les routes et les trottoirs.",
+                "Consolider la coopération avec la police municipale pour une action de proximité efficace.",
+                "Mettre en place des ateliers de sécurité routière (prévention, sensibilisation...).",
+                "Déployer un Projet de sécurité civile (réserve citoyenne, continuité des services, formations aux premiers secours...)."
             ]
         },
         '4': {
-            icon: 'fas fa-comments',
+            icon: 'fas fa-bullhorn',
             title: 'Communication et participation citoyenne',
             subtitle: 'Développer une communication claire et accessible',
             items: [
-                'Créer un site internet pour un meilleur accès aux informations communales, aux démarches en ligne (documents, CERFA, réservation de la salle, prise de rendez-vous avec les élus...)',
-                'Mettre en place un panneau d\'informations numérique connecté',
-                'Créer une boîte à idées citoyennes (physique et numérique)',
-                'Réaliser un bilan de mi-mandat afin d’évaluer les actions menées et d’en rendre compte publiquement',
-                'Continuer la communication sur les différents réseaux sociaux',
+                "Créer un site internet pour un meilleur accès aux informations et aux démarches en ligne (documents, réservation de salle, rendez-vous élus...).",
+                "Mettre en place un panneau d'informations numérique connecté.",
+                "Créer une boîte à idées citoyennes (physique et numérique).",
+                "Réaliser un bilan de mi-mandat pour évaluer les actions menées et en rendre compte.",
+                "Continuer la communication active sur les réseaux sociaux."
             ]
         },
         '5': {
-            icon: 'fas fa-map-marker-alt',
+            icon: 'fas fa-map-marked-alt',
             title: 'Attractivité de la commune',
             subtitle: 'Valoriser notre territoire et son identité',
             items: [
-                'Créer une signalétique claire des commerces et services dans le village',
-                'Baliser et mettre en avant les sentiers de randonnée',
-                'Développer les journées du patrimoine (exposition photographique, projection, visite commentée, parcours découverte, spectacle...)',
-                'Actualiser le plan de la commune'
+                "Créer une signalétique claire des commerces et services.",
+                "Baliser et mettre en avant les sentiers de randonnée.",
+                "Développer les journées du patrimoine (expositions, visites commentées, spectacles...).",
+                "Actualiser le plan de la commune."
             ]
         },
         '6': {
@@ -95,39 +152,39 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Services à la population',
             subtitle: 'Maintenir et améliorer les services de proximité',
             items: [
-                'Mettre en place des achats/services groupés (bois, pellets, ramonage, composteurs...)',
-                'Mettre en place des boîtes à livres et colportage chez les seniors ou personnes ne pouvant se déplacer',
-                'Organiser un forum des entreprises et des commerçants',
-                'Organiser une consultation des usagers sur les horaires de garderie et crèche'
+                "Mettre en place des achats et services groupés (bois, pellets, ramonage, composteurs...).",
+                "Mettre en place des boîtes à livres et un service de colportage pour les seniors.",
+                "Organiser un forum des entreprises et des commerçants.",
+                "Consulter les usagers sur les horaires de la garderie et de la crèche."
             ]
         },
         '7': {
-            icon: 'fas fa-graduation-cap',
+            icon: 'fas fa-child',
             title: 'Jeunesse',
             subtitle: 'Donner aux jeunes les moyens de s\'épanouir',
             items: [
-                'Créer un Conseil Municipal des Jeunes',
-                'Valoriser la participation des jeunes aux activités solidaires',
-                'Mettre en place un chèque associations',
-                'Aider à la formation BAFA',
-                'Développer les animations culturelles, sportives, 2.0...',
-                'Poursuivre le développement des activités périscolaires enfance et petite enfance',
-                'Créer un conseil de cantine, réunissant élèves, animateurs, parents et municipalité pour imaginer ensemble des activités créatives, sportives et ludiques répondant aux besoins des enfants',
-                'Proposer des séjours, Raids Aventure Ados, colonies pour les jeunes de 6 à 17 ans',
-                'Poursuivre l\'aménagement du plateau d\'évolution de l\'espace Agrestis pour créer une zone multisports accessible à tous, favorisant la pratique sportive, le bien-être et la convivialité',
+                "Créer un Conseil Municipal des Jeunes.",
+                "Valoriser la participation des jeunes aux activités solidaires.",
+                "Mettre en place un 'chèque associations'",
+                "Aider au financement de la formation BAFA.",
+                "Poursuivre l’aménagement du plateau d’évolution pour créer une zone multisports accessible à tous.",
+                "Développer les animations culturelles, sportives et numériques (2.0).",
+                "Poursuivre le développement des activités périscolaires.",
+                "Créer un conseil de cantine (élèves, parents, animateurs, élus).",
+                "Proposer des séjours et Raids Aventure pour les 6-17 ans."
             ]
         },
         '8': {
-            icon: 'fas fa-handshake',
+            icon: 'fas fa-users',
             title: 'Lien intergénérationnel',
             subtitle: 'Valoriser la transmission, le respect et le partage entre générations',
             items: [
-                'Développer des temps de partage intergénérationnels (jeux de société, ateliers créatifs, cuisine...)',
-                'Encourager un jeune à s\'engager comme porte-drapeau',
-                'Tisser des liens entre les générations autour du souvenir',
-                'Proposer un voyage à thème favorisant la transmission des savoirs',
-                'Créer un jardin partagé',
-                'Favoriser la rencontre aînés/jeunes une fois par mois à la cantine scolaire'
+                "Développer des temps de partage (jeux de société, cuisine, ateliers créatifs).",
+                "Encourager l'engagement des jeunes comme porte-drapeau.",
+                "Tisser des liens autour du devoir de mémoire.",
+                "Proposer un voyage à thème favorisant la transmission des savoirs.",
+                "Créer un jardin partagé.",
+                "Favoriser les rencontres aînés/jeunes mensuelles à la cantine scolaire."
             ]
         },
         '9': {
@@ -135,22 +192,22 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Travaux et grands projets',
             subtitle: 'Préparer la commune de demain',
             items: [
-                'Budgétiser et créer un plan de réfection des voiries à moyen terme',
-                'Aménager une zone de jeux et de loisirs pour les jeunes enfants',
-                'Poursuivre les travaux débutés en 2025 (notamment la création du trottoir au bas de la rue de Fouquières, caniveaux et plaques d\'égout...)',
-                'Aménager la salle du deuxième étage de l\'école (bibliothèque, salle de réunions ou de travail associative...)',
-                'Préserver la tranquillité du village en étudiant et évaluant la mise en place de la vidéoprotection aux entrées',
-                'Engager la réflexion collective à la création d\'un bâtiment communal (cantine scolaire, espace polyvalent...)'
+                "Établir un plan de réfection des voiries du village à moyen terme.",
+                "Poursuivre les travaux déjà engagés (chicanes, trottoir au bas de la rue de Fouquières, caniveaux, salle Agrestis...)",
+                "Aménager une zone de jeux et de loisirs pour les jeunes enfants.",
+                "Créer un espace bibliothèque, associatif dans la salle du deuxième étage de l’école.",
+                "Étudier la mise en place de la vidéoprotection aux entrées du village.",
+                "Lancer une réflexion collective sur la création d'un nouveau bâtiment communal (cantine, espace polyvalent)."
             ]
         },
         '10': {
-            icon: 'fas fa-building',
+            icon: 'fas fa-users-cog',
             title: 'Élections Communautaires',
             subtitle: 'Notre engagement pour la Communauté d\'Agglomération',
             items: [
-                'Être un partenaire actif et force de proposition : Faire de notre commune un acteur pleinement engagé dans le projet de territoire de la communauté d\'agglomération, présent dans les décisions et porteur de propositions utiles au territoire.',
-                'Rendre l\'action intercommunale plus lisible et plus proche : Informer clairement les habitants des décisions intercommunales et renforcer le lien entre la commune, l\'agglomération et les citoyens.',
-                'Mutualiser pour mieux agir au service des habitants : Mutualiser les moyens et les compétences avec l\'agglomération et ses communes, lorsque cela permet un meilleur service public, plus lisible et plus accessible.'
+                "Partenariat actif : Faire de notre commune un acteur moteur au sein de l'agglomération.",
+                "Proximité : Rendre l'action intercommunale plus lisible et transparente pour les citoyens.",
+                "Mutualisation : Optimiser les moyens et compétences pour offrir un meilleur service public."
             ]
         }
     };

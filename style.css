@@ -657,6 +657,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    align-items: start;
 }
 
 .team-member {
@@ -668,7 +669,6 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 .team-member:hover {
@@ -708,6 +708,83 @@ main {
 /* Description longue en pleine largeur */
 .member-description-full {
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-height: 150px;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.member-description-full.expanded {
+    max-height: 2000px;
+}
+
+.member-description-full::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--bg-secondary));
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.member-description-full.expanded::after {
+    opacity: 0;
+}
+
+/* Bouton Voir plus */
+.see-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    justify-content: center;
+}
+
+.see-more-btn::before,
+.see-more-btn::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+}
+
+.see-more-btn::before {
+    margin-right: 1rem;
+}
+
+.see-more-btn::after {
+    margin-left: 1rem;
+}
+
+.see-more-btn .icon {
+    transition: transform 0.3s ease;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+}
+
+.see-more-btn.expanded .icon {
+    transform: rotate(180deg);
+}
+
+.see-more-btn:hover {
+    color: var(--primary-dark);
+}
+
+.see-more-btn.hidden {
+    display: none;
 }
 
 .member-avatar i {
