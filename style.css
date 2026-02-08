@@ -281,6 +281,13 @@ main {
     margin-top: 2rem;
 }
 
+/* Afficher 3 colonnes par ligne sur desktop */
+@media (min-width: 900px) {
+    .program-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .program-item {
     background-color: var(--bg-primary);
     border-radius: var(--border-radius-lg);
