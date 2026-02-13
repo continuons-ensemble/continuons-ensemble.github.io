@@ -273,6 +273,37 @@ main {
     background-color: var(--bg-secondary);
 }
 
+.program-intro {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    border-left: 5px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.program-intro p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin: 0;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .program-intro {
+        padding: 1.5rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .program-intro p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
 .program-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -3077,17 +3108,18 @@ footer p {
     align-items: center;
     gap: 10rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 100%;
     position: relative;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1600px) {
     .team-stats::before,
     .team-stats::after {
         content: '';
         position: absolute;
         top: 50%;
-        width: 25%;
+        width: 20%;
         height: 2px;
         background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, var(--primary-color) 100%);
         z-index: 0;
@@ -3345,5 +3377,60 @@ footer p {
         top: 20px;
         padding: 0.2rem 0.7rem;
         font-size: 0.55rem;
+    }
+}
+
+/* Section Mode de Scrutin */
+.scrutin-info {
+    padding: 3rem 0;
+    background-color: var(--bg-secondary);
+}
+
+.scrutin-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.scrutin-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.scrutin-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .scrutin-info {
+        padding: 2rem 0;
+    }
+    
+    .scrutin-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .scrutin-image {
+        border-radius: var(--border-radius-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .scrutin-info {
+        padding: 1.5rem 0;
+    }
+    
+    .scrutin-info h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
     }
 }
