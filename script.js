@@ -746,3 +746,43 @@ if ('IntersectionObserver' in window) {
     // Initialisation
     updateTeamLayout();
 })();
+
+// Questions & Réponses - Accordéon
+(function() {
+    const qaItems = document.querySelectorAll('.qa-item');
+    
+    if (qaItems.length === 0) return; // Sortir si pas sur la page Q&A
+    
+    qaItems.forEach(item => {
+        const question = item.querySelector('.qa-question');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Fermer tous les autres items
+            qaItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle l'item cliqué
+            item.classList.toggle('active');
+            
+            // Scroll smooth vers l'item ouvert (optionnel, pour une meilleure UX)
+            if (!isActive && window.innerWidth < 768) {
+                setTimeout(() => {
+                    question.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 300);
+            }
+        });
+    });
+    
+    // Ouvrir le premier item par défaut au chargement
+    if (qaItems.length > 0) {
+        qaItems[0].classList.add('active');
+    }
+})();
