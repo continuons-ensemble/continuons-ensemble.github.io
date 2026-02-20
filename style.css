@@ -3522,7 +3522,7 @@ footer p {
 }
 
 .qa-item.active .qa-answer {
-    max-height: 1000px;
+    max-height: 2000px;
     padding: 0 1.5rem 1.5rem;
 }
 
