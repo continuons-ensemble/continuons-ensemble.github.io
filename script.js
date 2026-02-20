@@ -782,7 +782,7 @@ if ('IntersectionObserver' in window) {
     });
     
     // Ouvrir le premier item par défaut au chargement
-    if (qaItems.length > 0) {
-        qaItems[0].classList.add('active');
-    }
+    // if (qaItems.length > 0) {
+    //     qaItems[0].classList.add('active');
+    // }
 })();
